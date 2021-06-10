@@ -23,10 +23,10 @@ jobs:
 
       - name: Build image
         if: success()
-        run: docker build -t direckthit/fvtt-docker:${IMAGE_TAG} .
+        run: docker build -t ejrinkus/fvtt-docker-arm64:${IMAGE_TAG} .
 
       - name: Push to docker registry
         if: success()
         uses: actions-hub/docker@master
         with:
-          args: push direckthit/fvtt-docker:${IMAGE_TAG}
+          args: push ejrinkus/fvtt-docker-arm64:${IMAGE_TAG}
